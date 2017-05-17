@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="マストドンハック" class="slide level1">
+<h1>マストドンハック</h1>
+</section>
+<section id="自己紹介" class="slide level1">
+<h1>自己紹介</h1>
+<ul>
+<li>江添亮</li>
+<li>ドワンゴ</li>
+<li>C++</li>
+<li>マストドン芸人← New!</li>
+</ul>
+</section>
+<section id="技術" class="slide level1">
+<h1>技術</h1>
+<ul>
+<li>サーバー管理: 経験なし</li>
+<li>Ruby: 好きじゃない</li>
+<li>React: クソ</li>
+</ul>
+</section>
+<section id="お前-なんで-ここにいるんだよ" class="slide level1">
+<h1>お前 なんで ここにいるんだよ？</h1>
+</section>
+<section id="ハッキング" class="slide level1">
+<h1>ハッキング</h1>
+<ul>
+<li>ハッキングは簡単</li>
+<li>アイディア</li>
+<li>数行のコード</li>
+</ul>
+</section>
+<section id="非ハッカー" class="slide level1">
+<h1>非ハッカー</h1>
+<ul>
+<li>与えられたシステムを使うだけの利用者</li>
+<li>システムの詳細を学ぼうとしない</li>
+<li>最小限の知識だけで済ませようとする</li>
+</ul>
+</section>
+<section id="ハッカーの定義" class="slide level1">
+<h1>ハッカーの定義</h1>
+<blockquote>
+<p>プログラミングできる システムの 詳細を学び 機能を 拡張する 人物</p>
+<p>Jargon Files, Eric S. Raymond</p>
+</blockquote>
+</section>
+<section id="ハッカー" class="slide level1">
+<h1>ハッカー</h1>
+<ul>
+<li>与えられたシステムに満足しない</li>
+<li>詳細を調べる</li>
+<li>機能を拡張する</li>
+</ul>
+</section>
+<section id="システム" class="slide level1">
+<h1>システム</h1>
+<ul>
+<li>マストドン</li>
+<li>サーバー</li>
+<li>クライアント</li>
+</ul>
+</section>
+<section id="サーバー" class="slide level1">
+<h1>サーバー</h1>
+<ul>
+<li>サーバーにはカネがかかる</li>
+<li>大半の利用者は他人のサーバーを間借り</li>
+<li>利用者はサーバーを所有、支配していない</li>
+</ul>
+</section>
+<section id="クライアント" class="slide level1">
+<h1>クライアント</h1>
+<ul>
+<li>ブラウザー</li>
+<li>スマフォアプリ</li>
+<li>自作クライアント</li>
+</ul>
+</section>
+<section id="ブラウザー" class="slide level1">
+<h1>ブラウザー</h1>
+<ul>
+<li>利用者のコンピューターで</li>
+<li>HTML/CSS/JavaScriptを</li>
+<li>処理するソフトウェア</li>
+<li>挙動は利用者の自由</li>
+</ul>
+</section>
+<section id="ui変更" class="slide level1">
+<h1>UI変更</h1>
+<ul>
+<li>今のUIはオイゲンの好み</li>
+<li>万人向けではない</li>
+<li>UIは自分で改造</li>
+<li>CSSを注入</li>
+</ul>
+</section>
+<section id="数式表示" class="slide level1">
+<h1>数式表示</h1>
+<ul>
+<li>MathJaxを注入するブックマークレット</li>
+<li>数式で遊び始める人続出</li>
+</ul>
+</section>
+<section id="数式遊び" class="slide level1">
+<h1>数式遊び</h1>
+<ul>
+<li>やたら複雑な数式を書く</li>
+<li>TeXで絵を描く</li>
+<li>名前に数式を使う</li>
+</ul>
+</section>
+<section id="複雑な数式" class="slide level1">
+<h1>複雑な数式</h1>
+<div style="font-size : 0.5em ;">
+<p><span class="math display">\[ \left( \int_0^\infty \frac{\sin x}{\sqrt{x}} dx \right)^2 =
+      \sum_{k=0}^\infty \frac{(2k)!}{2^{2k}(k!)^2} \frac{1}{2k+1} =
+      \prod_{k=1}^\infty \frac{4k^2}{4k^2 - 1} = \frac{\pi}{2} \]</span></p>
+</div>
+<p><a href="https://friends.nico/@h_okumura/1702838" class="uri">https://friends.nico/@h_okumura/1702838</a></p>
+</section>
+<section id="texで絵を描く" class="slide level1">
+<h1>TeXで絵を描く</h1>
+<div>
+<p><span class="math display">\[
+\raise0.1ex{_{\_\_}^{\hspace{0.2em}\_}\hspace{-0.3em}\supset}
+\hspace{-1.9em}{\huge \lower0.2ex\bigcirc}‭‭
+\hspace{1em}
+_{{\large \cup}}^{\hspace{-0.06em}\mid\hspace{0.24em}{\small |}}‭
+\hspace{-1.6em}{\huge \lower0.2ex\bigcirc}
+\]</span></p>
+</div>
+<p><a href="https://friends.nico/@uzuky/1948625" class="uri">https://friends.nico/@uzuky/1948625</a></p>
+</section>
+<section id="名前に数式を使う" class="slide level1">
+<h1>名前に数式を使う</h1>
+<p><span class="math display">\[ \left( \frac{江添亮}{マストドン芸人} \right)^{friends.nico}\]</span></p>
+</section>
+<section id="権威たちの反応" class="slide level1">
+<h1>権威たちの反応</h1>
+<ul>
+<li>奥村先生と結城先生</li>
+<li>数式ブックマークレットに反応</li>
+</ul>
+</section>
+<section id="全自動ニコるスクリプト" class="slide level1">
+<h1>全自動ニコるスクリプト</h1>
+</section>
+<section id="ニコる" class="slide level1">
+<h1>ニコる</h1>
+<ul>
+<li>お気に入りの別名</li>
+<li>文言とアイコンを差し替えただけ</li>
+<li>friends.nicoの独自改変</li>
+<li>ニコニコ文化の歴史</li>
+</ul>
+</section>
+<section id="ニコる効果" class="slide level1">
+<h1>ニコる効果</h1>
+<ul>
+<li>他人の発現をお気に入りするのは抵抗あり</li>
+<li>ニコるなら文化的に気軽にできる</li>
+</ul>
+</section>
+<section id="ニコリ手" class="slide level1">
+<h1>ニコリ手</h1>
+<ul>
+<li>手動で全TOOTをニコる人が出現</li>
+</ul>
+</section>
+<section id="ニコるの自動化" class="slide level1">
+<h1>ニコるの自動化</h1>
+<p>実質3行</p>
+<ul>
+<li>ニコるボタンを列挙</li>
+<li>ループを実行</li>
+<li>ニコっていないボタンを全部押す</li>
+</ul>
+</section>
+<section id="価値" class="slide level1">
+<h1>価値</h1>
+<ul>
+<li>スクリプトに価値はない</li>
+<li>文脈と組み合わせて価値が生じる</li>
+</ul>
+</section>
+<section id="使い方" class="slide level1">
+<h1>使い方</h1>
+<ul>
+<li>神埼おにいさんの価値は実質3行</li>
+<li>3行革命</li>
+<li>「全自動ニコるスクリプトの力を見せてやろう」</li>
+<li>あとバルスとか</li>
+</ul>
+</section>
+<section id="意味" class="slide level1">
+<h1>意味</h1>
+<ul>
+<li>汚いハックは万人向けではない</li>
+<li>可能性を示すことが重要</li>
+<li>きれいな実装は後でやればいい</li>
+</ul>
+</section>
+<section id="動く技術" class="slide level1">
+<h1>動く技術</h1>
+<ul>
+<li>世の中には</li>
+<li>少しのアイディアと</li>
+<li>数行のコードで</li>
+<li>画期的な発明をする余地がいくらでもある</li>
+<li>So start hacking!</li>
+</ul>
+</section>
+<section id="ハッピーハッキング" class="slide level1">
+<h1>ハッピーハッキング</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
